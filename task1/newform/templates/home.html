@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="col-md-offset-4 col-md-4">
+            <form action="addData" method="POST" autocomplete="off">
+                {% csrf_token %}
+                <h3 class="page-header text-primary text-center">Task-1</h3>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="sname" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" name="email" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="pass" autocomplete="off">
+                </div>
+                <div class="form-group pull-right">
+                    <input type="submit" value="save" class="btn btn-primary">
+                    
+                </div>
+            
+        </form>
+        <a href="{% url 'showtable' %}" class="btn btn-success">show</a>
+        
+        
+        </div>
+        
+    </div>
+</body>
+</html>
